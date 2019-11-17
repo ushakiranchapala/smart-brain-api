@@ -29,39 +29,9 @@ app.use(cors())
 
 app.use(bodyParser.json());
 
-const database = {
-
-	users : [
-	  {
-	  	id: '123',
-	  	name: 'john',
-	  	email:'john@gmail.com',
-	  	password: 'cookies',
-	  	entries: 0,
-	  	joined: new Date()
-	  },
-	  {
-	  	id: '124',
-	  	name: 'sally',
-	  	email:'sally@gmail.com',
-	  	password: 'bananas',
-	  	entries: 0,
-	  	joined: new Date()
-	  }
-
-
-	],
-	login: [
-     {
-     	id: '987',
-     	hash: '',
-     	email: 'john@gmail.com'
-     }
-	]
-}
 
 app.get('/', (req, res) => {
-	res.send(database.users);
+	res.send('its working');
 })
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt) })
